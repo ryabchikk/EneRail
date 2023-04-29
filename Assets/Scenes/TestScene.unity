@@ -510,10 +510,6 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7532869909874514701, guid: 3e0920608d358d241b215e9a4b2c6de8, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7532869909874514701, guid: 3e0920608d358d241b215e9a4b2c6de8, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
@@ -638,17 +634,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7532869910213589852, guid: 3e0920608d358d241b215e9a4b2c6de8, type: 3}
   m_PrefabInstance: {fileID: 1189691393}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1189691403 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4983815230932118763, guid: 3e0920608d358d241b215e9a4b2c6de8, type: 3}
-  m_PrefabInstance: {fileID: 1189691393}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1189691397}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2eb733068ae49a049b763aa4beabf2d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1189691404 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7487464063005401271, guid: 3e0920608d358d241b215e9a4b2c6de8, type: 3}
@@ -818,8 +803,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 5
-  player: {fileID: 1189691404}
-  playerMovement: {fileID: 1189691403}
+  player: {fileID: 0}
+  playerMovement: {fileID: 0}
 --- !u!135 &1912349562
 SphereCollider:
   m_ObjectHideFlags: 0

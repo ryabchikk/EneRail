@@ -3,12 +3,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[ExecuteInEditMode]
 public class BaseBall : MonoBehaviour
 {
-    [SerializeField] protected BallType type = BallType.None;
+    [SerializeField] protected BallType type;
     protected virtual BallType SelfType => BallType.None;
-
-
+    
+    private void Awake()
+    {
+        type = SelfType;
+    }
+    
     public void ChangeType(BallType newType)
     {
         var typename = newType switch
@@ -16,7 +21,6 @@ public class BaseBall : MonoBehaviour
             BallType.None => "BaseBall",
             _ => $"{type}Ball"
         };
-        
         
         var t = Type.GetType(typename);
         var component = gameObject.AddComponent(t) as BaseBall;
