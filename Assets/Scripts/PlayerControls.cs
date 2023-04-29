@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlayerMovementController : MonoBehaviour
+public class PlayerControls : MonoBehaviour
 {
     public Vector3 LastDirection { get; private set; }
     [SerializeField] private Player player;

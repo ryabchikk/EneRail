@@ -5,7 +5,7 @@ using UnityEngine;
 public class BlueBall : BaseBall
 {
     [SerializeField] private Player player;
-    [SerializeField] private PlayerMovementController playerMovement;
+    [SerializeField] private PlayerControls playerMovement;
     protected override BallType SelfType => BallType.Blue;
 
     protected override void Act()

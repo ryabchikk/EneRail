@@ -7,7 +7,7 @@ public class GreenBall : EnergyBall
 {
     protected override BallType SelfType => BallType.Green;
 
-    protected override int GetEnergyChange()
+    protected override float GetEnergyChange()
     {
         return energyChange;
     }

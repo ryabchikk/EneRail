@@ -10,6 +10,8 @@ public class Player : MonoBehaviour
     public bool IsMoving => _isMoving;
     
     [SerializeField] private float speed;
+    [SerializeField] private float movementCost;
+    [SerializeField] private EnergyBar energy;
     private bool _isMoving;
     private Transform _current;
 
@@ -18,7 +20,9 @@ public class Player : MonoBehaviour
         if (!_isMoving) return;
 
         var direction = _current.position - transform.position;
-        transform.Translate(speed * Time.deltaTime * direction.normalized, Space.World);
+        direction = speed * Time.deltaTime * direction.normalized;
+        transform.Translate(direction, Space.World);
+        energy.ChangeValue(-direction.magnitude);
 
         if ((transform.position - _current.position).sqrMagnitude <= speed / 100)
         {
