@@ -20,15 +20,31 @@ public class Player : MonoBehaviour
         var direction = _current.position - transform.position;
         transform.Translate(speed * Time.deltaTime * direction.normalized, Space.World);
 
-        if ((transform.position - _current.position).sqrMagnitude <= 0.01f)
+        if ((transform.position - _current.position).sqrMagnitude <= speed / 100)
         {
-            _isMoving = false;
+            transform.position = _current.position;
+            Interrupt();
+            
         }
     }
     
-    public void Move(Transform target)
+    public void MoveTo(Transform target)
     {
         _isMoving = true;
         _current = target;
+    }
+
+    public void Interrupt()
+    {
+        _isMoving = false;
+        _current = null;
+    }
+    
+    public Transform GetTargetAt(Vector3 direction)
+    {
+        if (!Physics.Raycast(transform.position + direction, direction, out var hit, float.PositiveInfinity, ~6) || !hit.collider.gameObject.CompareTag("Target")) 
+            return null;
+            
+        return hit.transform;
     }
 }

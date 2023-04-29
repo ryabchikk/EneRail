@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class PlayerMovementController : MonoBehaviour
 {
+    public Vector3 LastDirection { get; private set; }
     [SerializeField] private Player player;
 
     private void Update()
@@ -19,10 +20,16 @@ public class PlayerMovementController : MonoBehaviour
             direction = Vector3.right;
         else if (Input.GetKeyDown(KeyCode.S))
             direction = Vector3.back;
+        
+        if(direction == Vector3.zero)
+            return;
 
-        if (Physics.Raycast(transform.position + direction, direction, out var hit) && hit.collider.gameObject.CompareTag("Target"))
+        LastDirection = direction;
+
+        var target = player.GetTargetAt(direction);
+        if (target != null)
         {
-            player.Move(hit.transform);
+            player.MoveTo(target);
         }
     }
 }

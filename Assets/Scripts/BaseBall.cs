@@ -5,26 +5,51 @@ using UnityEngine;
 
 public class BaseBall : MonoBehaviour
 {
-    public enum BallType
+    [SerializeField] protected BallType type = BallType.None;
+    protected virtual BallType SelfType => BallType.None;
+
+
+    public void ChangeType(BallType newType)
     {
-        Green,
-        Red,
-        Purple,
-        Gray
+        var typename = newType switch
+        {
+            BallType.None => "BaseBall",
+            _ => $"{type}Ball"
+        };
+        
+        
+        var t = Type.GetType(typename);
+        var component = gameObject.AddComponent(t) as BaseBall;
+        component.type = newType;
+        UnityEditor.EditorApplication.delayCall += () => DestroyImmediate(this);
+    }
+    
+    protected virtual void Act()
+    {
+        throw new NotImplementedException();
     }
 
-    [SerializeField] protected BallType type = BallType.Green;
-
-    private void Update()
+    private void OnTriggerEnter(Collider other)
     {
-        
+        if (other.CompareTag("Player"))
+            Act();
     }
 
     protected virtual void OnValidate()
     {
-        var t = Type.GetType($"{type}Ball");
-        var component = gameObject.AddComponent(t) as BaseBall;
-        component.type = type;
-        Destroy(this);
+        if (type == SelfType) 
+            return;
+
+        ChangeType(type);
     }
+}
+
+public enum BallType
+{
+    None,
+    Green,
+    Red,
+    Purple,
+    Gray,
+    Blue
 }
