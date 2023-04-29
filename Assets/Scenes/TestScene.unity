@@ -474,6 +474,10 @@ PrefabInstance:
       value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 7487464063005401271, guid: 3e0920608d358d241b215e9a4b2c6de8, type: 3}
+      propertyPath: movementCost
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7487464063005401271, guid: 3e0920608d358d241b215e9a4b2c6de8, type: 3}
       propertyPath: targets.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -619,6 +623,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0
+  movementCost: 0
+  energy: {fileID: 0}
 --- !u!4 &1189691400 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7532869910213589852, guid: 3e0920608d358d241b215e9a4b2c6de8, type: 3}

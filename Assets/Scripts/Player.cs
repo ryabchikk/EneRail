@@ -22,7 +22,7 @@ public class Player : MonoBehaviour
         var direction = _current.position - transform.position;
         direction = speed * Time.deltaTime * direction.normalized;
         transform.Translate(direction, Space.World);
-        energy.ChangeValue(-direction.magnitude);
+        energy.ChangeValue(-direction.magnitude * movementCost);
 
         if ((transform.position - _current.position).sqrMagnitude <= speed / 100)
         {
