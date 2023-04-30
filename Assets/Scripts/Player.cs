@@ -7,17 +7,18 @@ using UnityEngine.Serialization;
 
 public class Player : MonoBehaviour
 {
-    public bool IsMoving => _isMoving;
+    public bool IsMoving { get; private set; }
+
+    public PlayerControls controls;
     
     [SerializeField] private float speed;
-    [SerializeField] private float movementCost;
     [SerializeField] private EnergyBar energy;
-    private bool _isMoving;
     private Transform _current;
 
     private void FixedUpdate()
     {
-        if (!_isMoving) return;
+        if (!IsMoving) return;
+        Debug.Log(_current.name);
 
         var direction = _current.position - transform.position;
         direction = speed * Time.deltaTime * direction.normalized;
@@ -34,19 +35,20 @@ public class Player : MonoBehaviour
     
     public void MoveTo(Transform target)
     {
-        _isMoving = true;
+        IsMoving = true;
         _current = target;
     }
 
     public void Interrupt()
     {
-        _isMoving = false;
+        IsMoving = false;
         _current = null;
     }
     
     public Transform GetTargetAt(Vector3 direction)
     {
-        if (!Physics.Raycast(transform.position + direction, direction, out var hit, float.PositiveInfinity, ~6) || !hit.collider.gameObject.CompareTag("Target")) 
+        if (!Physics.Raycast(transform.position + direction, direction, out var hit, float.PositiveInfinity, 1 << 7)
+            || !hit.collider.gameObject.CompareTag("Target")) 
             return null;
             
         return hit.transform;
