@@ -37,6 +37,9 @@ public class BaseBall : MonoBehaviour
     {
         if (other.CompareTag("Player"))
             Act();
+        
+        if(this is ISingleShotBall singleShot && singleShot.ShouldDestroy())
+            Destroy(gameObject);
     }
 
     protected virtual void OnValidate()
@@ -55,5 +58,6 @@ public enum BallType
     Red,
     Purple,
     Gray,
-    Blue
+    Blue,
+    Finish
 }

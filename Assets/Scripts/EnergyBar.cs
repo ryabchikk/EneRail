@@ -5,13 +5,13 @@ using UnityEngine;
 
 public class EnergyBar : MonoBehaviour
 {
-    public float Value => value;
-    public event Action<float> ValueChanged;
+    public int Value => value;
+    public event Action<int> ValueChanged;
     public event Action NoEnergy;
 
-    [SerializeField] private float value;
+    [SerializeField] private int value;
 
-    public void ChangeValue(float val)
+    public void ChangeValue(int val)
     {
         value += val;
         if (value > 100)

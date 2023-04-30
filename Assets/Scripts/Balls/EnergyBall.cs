@@ -6,14 +6,14 @@ using UnityEngine;
 public class EnergyBall : BaseBall
 {
     [SerializeField] private EnergyBar energy;
-    [SerializeField] protected float energyChange;
+    [SerializeField] protected int energyChange;
 
     protected override void Act()
     {
         energy.ChangeValue(GetEnergyChange());
     }
 
-    protected virtual float GetEnergyChange()
+    protected virtual int GetEnergyChange()
     {
         throw new NotImplementedException();
     }
