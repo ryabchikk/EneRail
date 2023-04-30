@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class EnergyBar : MonoBehaviour
 {
-    public int Value => value;
+    public int Value => currentValue;
     public event Action<int> ValueChanged;
     public event Action NoEnergy;
 
