@@ -9,21 +9,22 @@ public class EnergyBar : MonoBehaviour
     public event Action<int> ValueChanged;
     public event Action NoEnergy;
 
-    [SerializeField] private int value;
+    [SerializeField] private int currentValue;
+    [SerializeField] private int maxValue;
 
     public void ChangeValue(int val)
     {
-        value += val;
-        if (value > 100)
-            value = 100;
+        currentValue += val;
+        if (currentValue > maxValue)
+            currentValue = maxValue;
 
-        if (value <= 0)
+        if (currentValue <= 0)
         {
-            value = 0;
+            currentValue = 0;
             NoEnergy?.Invoke();
         }
         
-        ValueChanged?.Invoke(value);
+        ValueChanged?.Invoke(currentValue);
     }
 
     private void GameOver()
