@@ -17,7 +17,7 @@ public class GlobalManager : MonoBehaviour
 
     public void GameOver()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        Restart();
     }
 
     public void StartGame()
@@ -28,6 +28,11 @@ public class GlobalManager : MonoBehaviour
     public void Finish()
     {
         
+    }
+
+    public void Restart()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     private void OnDestroy()
