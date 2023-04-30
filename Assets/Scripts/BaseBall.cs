@@ -7,6 +7,7 @@ using UnityEngine;
 public class BaseBall : MonoBehaviour
 {
     [SerializeField] protected BallType type;
+    [SerializeField] protected AudioSource pickupSound;
     protected virtual BallType SelfType => BallType.None;
     
     private void Awake()
@@ -35,8 +36,12 @@ public class BaseBall : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
-            Act();
+        if (!other.CompareTag("Player"))
+            return;
+        
+        Act();
+        pickupSound.Play();
+        
         
         if(this is ISingleShotBall singleShot && singleShot.ShouldDestroy())
             Destroy(gameObject);

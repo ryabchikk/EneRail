@@ -13,7 +13,16 @@ public class Player : MonoBehaviour
     
     [SerializeField] private float speed;
     [SerializeField] private EnergyBar energy;
+    [SerializeField] private ParticleSystem particles;
+    [SerializeField] private AudioSource movingSound;
+    private Vector3 _currentDirection => transform.position - _current.position;
     private Transform _current;
+    private Transform particlesTransform;
+
+    private void Awake()
+    {
+        particlesTransform = particles.transform;
+    }
 
     private void FixedUpdate()
     {
@@ -25,11 +34,10 @@ public class Player : MonoBehaviour
         transform.Translate(direction, Space.World);
         energy.ChangeValue(1);
 
-        if ((transform.position - _current.position).sqrMagnitude <= speed / 100)
+        if (_currentDirection.sqrMagnitude <= speed / 100)
         {
             transform.position = _current.position;
             Interrupt();
-            
         }
     }
     
@@ -37,12 +45,17 @@ public class Player : MonoBehaviour
     {
         IsMoving = true;
         _current = target;
+        particlesTransform.rotation = Quaternion.FromToRotation(transform.forward, _currentDirection);
+        particles.Play();
+        movingSound.Play();
     }
 
     public void Interrupt()
     {
         IsMoving = false;
         _current = null;
+        particles.Stop();
+        movingSound.Stop();
     }
     
     public Transform GetTargetAt(Vector3 direction)
