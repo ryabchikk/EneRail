@@ -253,7 +253,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee3ade3d52e4371448cd8f07cca4184f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  value: 0
+  currentValue: 0
+  maxValue: 0
 --- !u!1001 &268248102
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -691,6 +692,22 @@ PrefabInstance:
     - target: {fileID: 2413819304693794615, guid: 323423bf9661d144088cc659ba705968, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5329370912104323956, guid: 323423bf9661d144088cc659ba705968, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5329370912397771011, guid: 323423bf9661d144088cc659ba705968, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5329370912397771014, guid: 323423bf9661d144088cc659ba705968, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5329370912643883602, guid: 323423bf9661d144088cc659ba705968, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7780193969168853257, guid: 323423bf9661d144088cc659ba705968, type: 3}
       propertyPath: energy
