@@ -12,7 +12,6 @@ public class Player : MonoBehaviour
     public PlayerControls controls;
     
     [SerializeField] private float speed;
-    [SerializeField] private EnergyBar energy;
     [SerializeField] private ParticleSystem particles;
     [SerializeField] private AudioSource movingSound;
     private Vector3 _currentDirection => transform.position - _current.position;
@@ -32,7 +31,6 @@ public class Player : MonoBehaviour
         var direction = _current.position - transform.position;
         direction = speed * Time.deltaTime * direction.normalized;
         transform.Translate(direction, Space.World);
-        energy.ChangeValue(1);
 
         if (_currentDirection.sqrMagnitude <= speed / 100)
         {

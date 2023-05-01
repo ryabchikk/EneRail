@@ -4,18 +4,19 @@ using UnityEngine;
 using UnityEngine.UI;
 public class DialogueManager : MonoBehaviour
 {
-    [SerializeField] Text nameText;
-    [SerializeField] Text dialogueText;
-    [SerializeField] Queue<string> sentences;
-    [SerializeField] Animator animator;
+    [SerializeField] private Dialogue dialogue;
+    [SerializeField] private Text nameText;
+    [SerializeField] private Text dialogueText;
+    [SerializeField] private Queue<string> sentences;
+    [SerializeField] private Animator animator;
 
     void Start()
     {
         sentences = new Queue<string>();
-
+        StartDialogue();
     }
 
-    public void StartDialogue (Dialogue dialogue)
+    public void StartDialogue()
     {
         animator.SetBool("IsOpen", true);
 
@@ -53,7 +54,7 @@ public class DialogueManager : MonoBehaviour
             yield return null;
         } 
     }
-    private void EndDialogue()
+    public void EndDialogue()
     {
         animator.SetBool("IsOpen", false);
     }

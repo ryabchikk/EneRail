@@ -18,9 +18,9 @@ public class EnergyBar : MonoBehaviour
         if (currentValue > maxValue)
             currentValue = maxValue;
 
-        if (currentValue <= 0)
+        if (currentValue <= -1)
         {
-            currentValue = 0;
+            currentValue = -1;
             NoEnergy?.Invoke();
         }
         

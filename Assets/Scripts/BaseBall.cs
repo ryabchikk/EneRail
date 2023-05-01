@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEditor;
 [ExecuteInEditMode]
 public class BaseBall : MonoBehaviour
 {
@@ -26,7 +26,11 @@ public class BaseBall : MonoBehaviour
         var t = Type.GetType(typename);
         var component = gameObject.AddComponent(t) as BaseBall;
         component.type = newType;
-        UnityEditor.EditorApplication.delayCall += () => DestroyImmediate(this);
+#if UNITY_EDITOR
+        EditorApplication.delayCall += () => DestroyImmediate(this);
+#else
+    Destroy(this);
+#endif
     }
     
     protected virtual void Act()

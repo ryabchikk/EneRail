@@ -1,10 +1,11 @@
 using UnityEngine;
+using static UnityEngine.EventSystems.EventTrigger;
 
 public class PlayerControls : MonoBehaviour
 {
     public Vector3 LastDirection { get; private set; }
     [SerializeField] private Player player;
-
+    [SerializeField] private EnergyBar energy;
     private void Update()
     {
         if (player.IsMoving)
@@ -23,12 +24,13 @@ public class PlayerControls : MonoBehaviour
         
         if(direction == Vector3.zero)
             return;
-
+        
         LastDirection = direction;
 
         var target = player.GetTargetAt(direction);
         if (target != null)
         {
+            energy.ChangeValue(-1);
             player.MoveTo(target);
         }
     }
