@@ -5,25 +5,28 @@ using UnityEngine;
 
 public class GrayBall : BaseBall
 {
-    [SerializeField] private List<BallColorPair> affectedBalls;
+    [SerializeField] private List<BallPair> affectedBalls;
     protected override BallType SelfType => BallType.Gray;
 
     protected override void Act()
     {
-        foreach (var (ball, color) in affectedBalls)
-            ball.ChangeType(color);
+        foreach (var (first, second) in affectedBalls)
+        {
+            first.gameObject.SetActive(first.gameObject.activeSelf);
+            second.gameObject.SetActive(second.gameObject.activeSelf);
+        }
     }
 }
 
 [Serializable]
-public struct BallColorPair
+public struct BallPair
 {
-    public BaseBall ball;
-    public BallType type;
+    public BaseBall first;
+    public BaseBall second;
 
-    public void Deconstruct(out BaseBall ball, out BallType type)
+    public void Deconstruct(out BaseBall first, out BaseBall second)
     {
-        ball = this.ball;
-        type = this.type;
+        first = this.first;
+        second = this.second;
     }
 }

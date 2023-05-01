@@ -7,12 +7,13 @@ using UnityEditor;
 public class BaseBall : MonoBehaviour
 {
     [SerializeField] protected BallType type;
-    [SerializeField] protected AudioSource pickupSound;
+    private AudioSource _pickupSound;
     protected virtual BallType SelfType => BallType.None;
     
     private void Awake()
     {
         type = SelfType;
+        _pickupSound = GetComponent<AudioSource>();
     }
     
     public void ChangeType(BallType newType)
@@ -26,10 +27,11 @@ public class BaseBall : MonoBehaviour
         var t = Type.GetType(typename);
         var component = gameObject.AddComponent(t) as BaseBall;
         component.type = newType;
+        component.GetComponent<MeshRenderer>().material = Resources.Load<Material>("Materials/" + type + " Bloom");
 #if UNITY_EDITOR
         EditorApplication.delayCall += () => DestroyImmediate(this);
 #else
-    Destroy(this);
+        Destroy(this);
 #endif
     }
     
@@ -44,7 +46,7 @@ public class BaseBall : MonoBehaviour
             return;
         
         Act();
-        pickupSound.Play();
+        _pickupSound.Play();
         
         
         if(this is ISingleShotBall singleShot && singleShot.ShouldDestroy())

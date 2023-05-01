@@ -4298,8 +4298,8 @@ GameObject:
   - component: {fileID: 2051850359}
   - component: {fileID: 2051850358}
   - component: {fileID: 2051850357}
-  - component: {fileID: 2051850356}
   - component: {fileID: 2051850360}
+  - component: {fileID: 2051850356}
   m_Layer: 6
   m_Name: Target (6)
   m_TagString: Target
@@ -4334,7 +4334,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 5
-  pickupSound: {fileID: 2051850360}
+  pickupSound: {fileID: 0}
   player: {fileID: 1517187107}
   direction: 3
 --- !u!135 &2051850357
