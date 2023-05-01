@@ -7,7 +7,7 @@ using UnityEditor;
 public class BaseBall : MonoBehaviour
 {
     [SerializeField] protected BallType type;
-    private AudioSource _pickupSound;
+    protected AudioSource _pickupSound;
     protected virtual BallType SelfType => BallType.None;
     
     private void Awake()
@@ -47,9 +47,8 @@ public class BaseBall : MonoBehaviour
         
         Act();
         _pickupSound.Play();
-        
-        
-        if(this is ISingleShotBall singleShot && singleShot.ShouldDestroy())
+
+        if (this is ISingleShotBall singleShot && singleShot.ShouldDestroy())
             Destroy(gameObject);
     }
 

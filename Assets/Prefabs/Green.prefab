@@ -112,7 +112,8 @@ MonoBehaviour:
   type: 1
   energy: {fileID: 0}
   energyChange: 1
-  isSingleShot: 0
+  pickUpSound: {fileID: 7940615306088218943, guid: 61b6072c6a3df404e97d4508349aae05, type: 3}
+  isSingleShot: 1
 --- !u!82 &2218136111098867490
 AudioSource:
   m_ObjectHideFlags: 0

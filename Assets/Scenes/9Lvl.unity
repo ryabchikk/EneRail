@@ -1309,7 +1309,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2218136111098867494, guid: f84f43cdf07cb51428a2d784981a7ff6, type: 3}
       propertyPath: isSingleShot
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2218136111098867495, guid: f84f43cdf07cb51428a2d784981a7ff6, type: 3}
       propertyPath: m_RootOrder
@@ -1358,6 +1358,14 @@ PrefabInstance:
     - target: {fileID: 2218136111098867496, guid: f84f43cdf07cb51428a2d784981a7ff6, type: 3}
       propertyPath: m_Name
       value: Green
+      objectReference: {fileID: 0}
+    - target: {fileID: 6217051364318089421, guid: f84f43cdf07cb51428a2d784981a7ff6, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6970908785407862727, guid: f84f43cdf07cb51428a2d784981a7ff6, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f84f43cdf07cb51428a2d784981a7ff6, type: 3}
@@ -5871,7 +5879,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7896012625369854316, guid: ff3a0552403985a4c92c0b23121b48bc, type: 3}
       propertyPath: m_RootOrder
-      value: 37
+      value: 36
       objectReference: {fileID: 0}
     - target: {fileID: 7896012625369854316, guid: ff3a0552403985a4c92c0b23121b48bc, type: 3}
       propertyPath: m_LocalPosition.x
