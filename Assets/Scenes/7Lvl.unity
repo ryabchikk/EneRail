@@ -1549,6 +1549,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5147636409859318360, guid: 49f4c1ea8c360e8459b14f34de88d481, type: 3}
+      propertyPath: numberLvl
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 49f4c1ea8c360e8459b14f34de88d481, type: 3}
 --- !u!1 &350260394 stripped
@@ -2180,7 +2184,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 71db75908cecc5a459762b6d25bd4304, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 29c3b974526d6bb4c82b83a045f2e450, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.5
   m_Pitch: 1
@@ -6432,6 +6436,7 @@ MonoBehaviour:
   energy: {fileID: 350260395}
   finishPanel: {fileID: 350260394}
   clip: {fileID: 0}
+  player: {fileID: 215982080}
 --- !u!114 &2033558633
 MonoBehaviour:
   m_ObjectHideFlags: 0

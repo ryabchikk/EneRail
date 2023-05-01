@@ -12,7 +12,7 @@ public class PlayerControls : MonoBehaviour
             return;
 
         var direction = Vector3.zero;
-        
+
         if (Input.GetKeyDown(KeyCode.W))
             direction = Vector3.forward;
         else if (Input.GetKeyDown(KeyCode.A))
