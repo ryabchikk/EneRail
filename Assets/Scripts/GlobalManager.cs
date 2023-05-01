@@ -14,8 +14,11 @@ public class GlobalManager : MonoBehaviour
     private void Start()
     {
         var audioSource = MusicManager.Instance.AudioSource;
-        if(clip != null && audioSource.clip != clip)
+        if(clip != null && audioSource.clip != clip) { 
             audioSource.clip = clip;
+            audioSource.Play();
+        }
+            
         Instance = this;
         energy.NoEnergy += GameOver;
         StartGame();

@@ -33,7 +33,7 @@ public static class DirectionExtensions
         return dir switch
         {
             Direction.Up => Vector3.forward,
-            Direction.Down => Vector3.down,
+            Direction.Down => Vector3.back,
             Direction.Left => Vector3.left,
             Direction.Right => Vector3.right
         };

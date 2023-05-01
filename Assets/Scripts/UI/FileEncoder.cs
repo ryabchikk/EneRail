@@ -87,6 +87,10 @@ public class FileEncoder
         var random = new Random();
         var positions = GetOpenPositions();
         var result = new List<int>();
+        if(count>WordsCount - positions.Count)
+        {
+            count = WordsCount - positions.Count;
+        }
         for (int i = 0; i < count; i++)
         {
             int position;

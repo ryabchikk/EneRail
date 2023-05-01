@@ -793,7 +793,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   energy: {fileID: 1898392110}
   finishPanel: {fileID: 1078668153}
-  clip: {fileID: 0}
+  clip: {fileID: 8300000, guid: 72df7922e38e4b344b9418db76e99b94, type: 3}
 --- !u!114 &798635031
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1089,7 +1089,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0

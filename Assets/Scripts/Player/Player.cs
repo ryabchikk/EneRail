@@ -14,7 +14,7 @@ public class Player : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField] private ParticleSystem particles;
     [SerializeField] private AudioSource movingSound;
-    [SerializeField] private Transform startPosition;
+    //[SerializeField] private Transform startPosition;
     private Vector3 _currentDirection => transform.position - _current.position;
     private Transform _current;
     private Transform particlesTransform;
