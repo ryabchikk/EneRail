@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 5750993}
   - component: {fileID: 5750992}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: ReadmeButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -441,7 +441,7 @@ GameObject:
   - component: {fileID: 233875446}
   - component: {fileID: 233875445}
   m_Layer: 5
-  m_Name: Button (3)
+  m_Name: ExitButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -511,9 +511,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
-        m_MethodName: DisplayNextSentence
+      - m_Target: {fileID: 1824416491}
+        m_TargetAssemblyTypeName: ButtonScripts, Assembly-CSharp
+        m_MethodName: ExitGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -654,7 +654,7 @@ GameObject:
   - component: {fileID: 421692631}
   - component: {fileID: 421692630}
   m_Layer: 5
-  m_Name: Button (2)
+  m_Name: SettingsButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1221,7 +1221,7 @@ GameObject:
   - component: {fileID: 1189583098}
   - component: {fileID: 1189583097}
   m_Layer: 5
-  m_Name: Button
+  m_Name: StartButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1291,9 +1291,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
-        m_MethodName: DisplayNextSentence
+      - m_Target: {fileID: 1824416491}
+        m_TargetAssemblyTypeName: ButtonScripts, Assembly-CSharp
+        m_MethodName: LoadLvl
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1765,6 +1765,7 @@ GameObject:
   - component: {fileID: 1824416489}
   - component: {fileID: 1824416488}
   - component: {fileID: 1824416487}
+  - component: {fileID: 1824416491}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1855,6 +1856,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1824416491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1824416486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd666c99d8a5ba34ab82a55c275c89d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numberLvl: 1
 --- !u!1 &1942595099
 GameObject:
   m_ObjectHideFlags: 0
