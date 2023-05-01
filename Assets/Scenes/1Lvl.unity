@@ -794,6 +794,7 @@ MonoBehaviour:
   energy: {fileID: 1898392110}
   finishPanel: {fileID: 1078668153}
   clip: {fileID: 8300000, guid: 72df7922e38e4b344b9418db76e99b94, type: 3}
+  player: {fileID: 800399146}
 --- !u!114 &798635031
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1087,7 +1088,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 72df7922e38e4b344b9418db76e99b94, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0

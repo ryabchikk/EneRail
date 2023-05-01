@@ -20,7 +20,6 @@ public struct BallColorPair
 {
     public BaseBall ball;
     public BallType type;
-
     public void Deconstruct(out BaseBall ball, out BallType type)
     {
         ball = this.ball;

@@ -10,7 +10,7 @@ public class GlobalManager : MonoBehaviour
     [SerializeField] private EnergyBar energy;
     [SerializeField] private GameObject finishPanel;
     [SerializeField] private AudioClip clip;
-
+    [SerializeField] private GameObject player;
     private void Start()
     {
         var audioSource = MusicManager.Instance.AudioSource;
@@ -39,6 +39,7 @@ public class GlobalManager : MonoBehaviour
         finishPanel.SetActive(true);
         SaveCurrentLevel();
         Time.timeScale = 0.0f;
+        player.SetActive(false);
     }
 
     public void Restart()

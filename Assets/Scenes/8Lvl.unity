@@ -877,7 +877,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 71db75908cecc5a459762b6d25bd4304, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 9e0e7c2614133114093410525f15642a, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.5
   m_Pitch: 1
@@ -1936,7 +1936,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   energy: {fileID: 1755720394}
   finishPanel: {fileID: 1755720393}
-  clip: {fileID: 0}
+  clip: {fileID: 8300000, guid: 9e0e7c2614133114093410525f15642a, type: 3}
+  player: {fileID: 8457341}
 --- !u!114 &453723657
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6206,6 +6207,10 @@ PrefabInstance:
     - target: {fileID: 988743671900199446, guid: 49f4c1ea8c360e8459b14f34de88d481, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5147636409859318360, guid: 49f4c1ea8c360e8459b14f34de88d481, type: 3}
+      propertyPath: numberLvl
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 49f4c1ea8c360e8459b14f34de88d481, type: 3}
