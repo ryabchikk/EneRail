@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
+using UnityEngine;
+using Random = System.Random;
 
 public class FileEncoder
 {
-    private static string filePath = "Assets/Files/file.txt";
-    private static string positionsPath = "Assets/Files/positions.txt";
-
     public static int WordsCount
     {
         get
@@ -17,10 +16,8 @@ public class FileEncoder
             if (_wordsCount == 0)
             {
                 string[] words;
-                using (var sr = new StreamReader(filePath))
-                {
-                    words = sr.ReadToEnd().Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
-                }
+                words = _text.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                
 
                 _wordsCount = words.Length;
             }
@@ -32,18 +29,24 @@ public class FileEncoder
     }
 
     private static int _wordsCount = 0;
+    private static string _text;
+
+    public static void Init(string text)
+    {
+        _text = text;
+    }
 
     public static string GetEncodedFile()
     {
         Regex regex = new Regex("[a-zA-Z0-9]");
-        using var sr = new StreamReader(filePath);
         
-        var words = sr.ReadToEnd().Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+        var words = _text.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
 
         var positions = GetOpenPositions();
         
         for (var i = 0; i < words.Length; i++)
         {
+            
             if (!positions.Contains(i))
             {
                 words[i] = regex.Replace(words[i], "_");
@@ -55,24 +58,28 @@ public class FileEncoder
 
     public static void AddOpenPositions(List<int> positions)
     {
-        using var sw = new StreamWriter(File.Open(positionsPath, FileMode.Append));
+        var pos = GetOpenPositions();
         
         foreach (var position in positions)
         {
-            sw.Write(position);
-            sw.Write(",");
+            if(!pos.Contains(position))
+            {
+                pos.Add(position);
+            }
         }
+        
+        PlayerPrefs.SetString("positions", string.Join(",", pos));
     }
 
-    public static int[] GetOpenPositions()
+    public static List<int> GetOpenPositions()
     {
-        using var sr = new StreamReader(positionsPath);
+        var positions = PlayerPrefs.GetString("positions");
         
-        var numbers = sr.ReadToEnd().Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+        var numbers = positions.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
         if (numbers.Length == 0)
-            return new int[] {};
+            return new List<int>();
             
-        return numbers.Select(int.Parse).ToArray();
+        return numbers.Select(int.Parse).ToList();
     }
 
     public static List<int> GeneratePositionsToOpen(int count)
