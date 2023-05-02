@@ -61,7 +61,7 @@ public class GlobalManager : MonoBehaviour
         if (!PlayerPrefs.HasKey(level.ToString()))
         {
             PlayerPrefs.SetInt(level.ToString(), 0);
-            FileEncoder.AddOpenPositions(FileEncoder.GeneratePositionsToOpen(5));
+            FileEncoder.AddOpenPositions(FileEncoder.GeneratePositionsToOpen(40));
         }
     }
 }

@@ -313,7 +313,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 6
-  pickupSound: {fileID: 159644067}
 --- !u!82 &159644067
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2287,6 +2286,18 @@ PrefabInstance:
     - target: {fileID: 5147636409859318360, guid: 49f4c1ea8c360e8459b14f34de88d481, type: 3}
       propertyPath: numberLvl
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7450986324359280645, guid: 49f4c1ea8c360e8459b14f34de88d481, type: 3}
+      propertyPath: dialogue.sentences.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7450986324359280645, guid: 49f4c1ea8c360e8459b14f34de88d481, type: 3}
+      propertyPath: dialogue.sentences.Array.data[0]
+      value: You're an inspiration to others, keep leading by example!
+      objectReference: {fileID: 0}
+    - target: {fileID: 7450986324359280645, guid: 49f4c1ea8c360e8459b14f34de88d481, type: 3}
+      propertyPath: dialogue.sentences.Array.data[1]
+      value: Never give up on your dreams, they are worth fighting for!
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 49f4c1ea8c360e8459b14f34de88d481, type: 3}

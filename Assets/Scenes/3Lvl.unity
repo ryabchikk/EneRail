@@ -2457,6 +2457,18 @@ PrefabInstance:
       propertyPath: numberLvl
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 7450986324359280645, guid: 49f4c1ea8c360e8459b14f34de88d481, type: 3}
+      propertyPath: dialogue.sentences.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7450986324359280645, guid: 49f4c1ea8c360e8459b14f34de88d481, type: 3}
+      propertyPath: dialogue.sentences.Array.data[0]
+      value: Keep your head up and keep moving forward, success is within reach!
+      objectReference: {fileID: 0}
+    - target: {fileID: 7450986324359280645, guid: 49f4c1ea8c360e8459b14f34de88d481, type: 3}
+      propertyPath: dialogue.sentences.Array.data[1]
+      value: You have what it takes to be great, don't doubt yourself!
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 49f4c1ea8c360e8459b14f34de88d481, type: 3}
 --- !u!114 &1601623932 stripped
@@ -3125,7 +3137,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 6
-  pickupSound: {fileID: 1875121272}
 --- !u!82 &1875121272
 AudioSource:
   m_ObjectHideFlags: 0

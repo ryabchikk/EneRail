@@ -12,8 +12,14 @@ public class GrayBall : BaseBall
     {
         foreach (var (first, second) in affectedBalls)
         {
-            first.gameObject.SetActive(first.gameObject.activeSelf);
-            second.gameObject.SetActive(second.gameObject.activeSelf);
+            if (second.gameObject.activeSelf) {
+                first.gameObject.SetActive(true);
+                second.gameObject.SetActive(false);
+            }
+            else {
+                first.gameObject.SetActive(false);
+                second.gameObject.SetActive(true);
+            }
         }
     }
 }

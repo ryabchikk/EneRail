@@ -11,4 +11,8 @@ public class SoundPrefab : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    private void Start()
+    {
+        sound.Play();
+    }
 }

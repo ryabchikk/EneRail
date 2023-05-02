@@ -314,7 +314,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7532869909269835866, guid: 3e0920608d358d241b215e9a4b2c6de8, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7532869909269835868, guid: 3e0920608d358d241b215e9a4b2c6de8, type: 3}
       propertyPath: m_LocalScale.x
@@ -390,7 +390,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9172947015708401681, guid: 3e0920608d358d241b215e9a4b2c6de8, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e0920608d358d241b215e9a4b2c6de8, type: 3}
@@ -540,7 +540,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 6
-  pickupSound: {fileID: 8457345}
 --- !u!82 &8457345
 AudioSource:
   m_ObjectHideFlags: 0
@@ -6208,9 +6207,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 988743672844486893, guid: 49f4c1ea8c360e8459b14f34de88d481, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5147636409859318360, guid: 49f4c1ea8c360e8459b14f34de88d481, type: 3}
       propertyPath: numberLvl
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7450986324359280645, guid: 49f4c1ea8c360e8459b14f34de88d481, type: 3}
+      propertyPath: dialogue.sentences.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7450986324359280645, guid: 49f4c1ea8c360e8459b14f34de88d481, type: 3}
+      propertyPath: dialogue.sentences.Array.data[0]
+      value: You're capable of achieving anything you set your mind to!
+      objectReference: {fileID: 0}
+    - target: {fileID: 7450986324359280645, guid: 49f4c1ea8c360e8459b14f34de88d481, type: 3}
+      propertyPath: dialogue.sentences.Array.data[1]
+      value: You're a natural talent, don't let anything hold you back!
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 49f4c1ea8c360e8459b14f34de88d481, type: 3}
